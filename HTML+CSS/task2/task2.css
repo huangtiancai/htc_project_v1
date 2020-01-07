@@ -1,17 +1,111 @@
-body{
+body {
+
     background-color: #FEF6F3;
-    margin:0;
+    margin: 0;
     padding: 0;
+    /*body=<div class="nav"> 他们的宽度 width:1167px =1183px*/
 }
 
-ul.nav{
+
+/*
+  组合选择器： 
+  - 并集选择器（选择器组） - 语法：选择器1,选择器2,选择器3 {}       ,
+  - 复合选择器（交集选择器）- 语法：选择器1选择器2选择器3 {}        无空格 
+  - 后代选择器 - 语法：祖先元素 后代元素 {}                        空格 
+  - 子选择器 - 语法：父元素>子元素 {}                              >
+  - 相邻选择器 - 语法：A+B                                        +
+
+*/
+
+/*交集*/
+ul.nav {
     list-style-type: none;
     position: relative;
     margin: 0 auto;
     padding: 0px;
     width: 90%;
+    /*ul.nav的宽度是父级div(width=1183px)的90% 1183px*0.9=1064.7px*/
 }
 
-ul.nav li{
+/*交集:ul.nav  后代所有的li*/
+ul.nav li {
+    /*li元素向左浮动*/
     float: left;
+}
+
+/*设置链接样式(未访问和访问过)*/
+/*后代 => 并集*/
+ul.nav a:link,
+a:visited {
+    /*设置a标签的文字内容的样式：
+    1.文字“组成部分” width:64px height:17px 高度均为17，一个中文宽度16px,一个标签实际宽度由字数确定
+    2.a-默认是行内元素,display:block;强制将它改成块元素,高度=>21px */
+    display: block;
+    /*加个背景色*/
+    background: #0B98FB;
+    /*设置承载内容块的宽度为固定的100px，内容的实际宽度比100px小，块的右侧为空=>100*21 无内边距*/
+    width: 100px;
+    /*设置内边距（上下左右四个方向内边距均为6px） => 112*33*/
+    padding: 6px;
+    /*设置内容居中 =>112*33*/
+    text-align: center;
+    /*去除下划线*/
+    /* text-decoration: none; */
+    /*设置字体颜色*/
+    color: #FFFFFF;
+
+}
+
+/*链接悬浮设置背景颜色,可以设置比原来的背景色略深一点*/
+ul.nav a:hover,
+a:active {
+    background-color: #3E68F9;
+}
+
+
+div.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: #0B98FB;
+    width: 100%;
+    height: 33px;
+    /*注意：a标签的高度也为33px*/
+    padding: 0;
+}
+
+/*全局的a标签去掉下划线*/
+a {
+    text-decoration: none;
+}
+
+/*.container的div主要设置内容区域整体的宽度、外边距、距上边元素距离等属性;
+  .content的div主要设置内容区域内部的样式属性；
+*/
+.container {
+    /*相对定位元素的定位是相对其正常位置*/
+    position: relative;
+    top: 33px;
+    /* 上下外边距为20px*/
+    margin: 20px auto;
+    /*宽度占80%*/
+    width: 80%;
+    /*高度是靠内容撑开*/
+}
+
+.content {
+    /*背景色也可以在container设置*/
+    background-color: #FFFFFF;
+    margin-top: 30px;
+    /*设置content的div内边距为29px*/
+    padding: 29px;
+    /*???*/
+    position: relative;
+    box-shadow: 2px 2px 3px #888888;
+
+}
+
+.content a {
+    color: #B6AEFF;
 }
