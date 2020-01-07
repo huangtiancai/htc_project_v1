@@ -109,3 +109,11 @@ a {
 .content a {
     color: #B6AEFF;
 }
+
+/*设置段落样式：字体缩进、字体大小、行高..*/
+p {
+    /*缩进*/
+    text-indent: 2em;
+    font-size: 14px;
+    line-height: 24px;
+}

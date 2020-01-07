@@ -23,8 +23,8 @@
 
  p {
      text-indent: 2em;
-     font-style:
-         font-size:14px;
+     /* font-style: */
+     font-size: 14px;
      line-height: 24px;
  }
 
