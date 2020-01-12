@@ -1,0 +1,262 @@
+/*1
+cursor:光标 default
+cursor 属性规定要显示的光标的类型（形状）- 该属性定义了鼠标指针放在一个元素边界范围内时所用的光标形状
+值 	描述
+url:需使用的自定义光标的 URL  注释：请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。
+default:
+默认光标（通常是一个箭头）
+*/
+html,
+body {
+  height: 100%;
+  cursor: url(./assets/pic/pointer.cur), default; 
+
+}
+/*2
+cursor
+pointer:光标呈现为指示链接的指针（一只手）
+!important:优先级最大
+*/
+a,
+button {
+  cursor: url(./assets/pic/cursor.cur), pointer !important;
+}
+
+/*3
+transition；过渡效果
+*/
+a:hover {
+  color: #eb5055 !important;
+  transition: 0.3s;
+}
+
+/*4
+list-style 列表样式
+*/
+ul li {
+  list-style: none;
+}
+
+/*5
+float:浮动 重点
+float: left;
+float: right;
+*/
+.right {
+  float: right;
+}
+.left {
+  float: left;
+}
+
+/*6
+vertical-align 属性设置一个元素的垂直对齐方式 
+vertical-align: middle; 把此元素放置在父元素的中部
+*/
+
+img {
+  vertical-align: middle;
+}
+
+/*7
+clear 指定段落的左侧或右侧不允许浮动的元素：
+left 	在左侧不允许浮动元素。
+right 	在右侧不允许浮动元素。
+both 	在左右两侧均不允许浮动元素。
+none 	默认值。允许浮动元素出现在两侧。
+*/
+.clear {
+  clear: both;
+}
+
+/*8
+animation-duration属性定义动画完成一个周期需要多少秒或毫秒
+animation-duration: time;
+time - 指定动画播放完成花费的时间。默认值为 0，意味着没有动画效果
+
+animation-duration: 0.5s; 设置动画在0.5S
+*/
+.animated {
+  animation-duration: 0.5s;
+}
+
+/*9
+animation（动画） 属性
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+*/
+
+.heart {
+  animation: 0.7s heartMove ease infinite alternate;
+}
+
+/*
+10
+CSS3 @keyframes 规则
+transform:Transform属性应用于元素的2D或3D转换。这个属性允许你将元素旋转，缩放，移动，倾斜等
+rotate
+*/
+@keyframes heartMove {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+/*11
+z-index 属性指定一个元素的堆叠顺序
+*/
+.ivu-modal-mask,
+.ivu-modal-wrap {
+  z-index: 1010 !important;
+}
+
+
+/*12
+left 属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移
+left: unset;
+*/
+/* 表单的验证信息右移 */
+.ivu-form-item-error-tip {
+  left: unset;
+  right: 0;
+}
+
+/*
+13
+字体
+*/
+.hljs {
+  font-size: 16px;
+}
+.hljs-comment,
+.hljs-quote {
+  font-style: normal !important;
+  font-weight: bold;
+}
+
+/*
+APP.vue
+1 cursor
+2 !important
+3 transition
+4 list-style
+5 float
+6 vertical-align
+7 clear
+8 animation-duration
+9 animation
+10 @keyframes
+11 rotate
+12 z-index
+13 left
+14 right
+14 display
+15 47 &.sub-item
+48 &:hover > .nav-child
+16 opacity
+17 bottom
+18 transition
+19 left: unset;
+   right: 0;
+   right: unset !important;
+20 margin-left 
+   margin-*
+21 padding
+   padding-*
+22 transform
+23 background  background: rgba(255, 111, 27, 0.9) !important;
+   background-color
+   background-image
+24 border-radius 圆角   border-radius: 2em; 
+25 height/width
+26 rgba
+27 text-align: center;
+28 font-size
+   font-*
+29 color
+30 -webkit-border-radius: 2em;
+31 -moz-border-radius: 2em;
+32 -webkit-linear-gradient
+33 transparent 25%,
+34 -moz-appearance: none !important;
+35 min-width: 12px !important;
+36 max-width: 1080px
+37 ::selection
+38 @media 媒体查询 响应式布局
+39 display 
+40 top
+41 line-height
+42 fadeIn
+43 position
+   position: relative;
+44 &::before
+45 &:hover
+
+Header.vue
+
+46 box-shadow
+47 &.sub-item
+48 &:hover > .nav-child
+49 outline
+50 -webkit-appearance
+51 box-sizing
+52 rotateZ
+53 transform-origi
+
+
+Detail.vue
+54 &:not
+55 :first-child
+56 overflow
+57 text-overflow
+58 white-space
+59 & > .col:first-child{}
+60 border
+61 outline
+
+Footer.vue
+
+Music.vue
+
+NotFound.vue
+62 text-shadow
+
+SectionArticle.vue
+63 -webkit-box-orient
+64 -webkit-line-clamp
+
+SectionHeader.vue
+65 letter-spacing
+
+About
+
+BackstageEdit
+66 padding-bottom
+67 outline
+68 textarea
+
+BackstageList
+
+BackstageLogin
+
+BackstageMusic
+
+Blog
+
+Category
+69 wrapper
+
+Home
+
+Link 
+
+Search
+
+
+
+
+
+
+*/
