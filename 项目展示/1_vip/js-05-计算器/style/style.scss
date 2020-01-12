@@ -13,11 +13,14 @@ h1{
   margin: 30px auto;
   border: 1px solid #fff;
   .show{
-    // 250px * 40px
+    // 250px * 40px  250px+10px=260px (300px-260x)/2=20px =>两边各余20px
     width: 250px;
     height: 40px;
     background-color: #fff;
-
+    margin: 18px auto;//左右均为auto，水平居中显示
+    padding-right: 10px;// 右内边距
+    text-align: right; // CSS内容居右
+    line-height: 40px; // 行高=height=>垂直方向上居中
   }
 }
 
