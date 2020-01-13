@@ -36,5 +36,9 @@ h1 {
   border: 1px solid #fff;
   position: relative;
 }
+.count .content .c_conP {
+  width: 198px;
+  float: left;
+}
 
 /*# sourceMappingURL=style.css.map */

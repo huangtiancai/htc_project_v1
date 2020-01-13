@@ -28,16 +28,22 @@ h1 {
     //设置内容样式
     font-size: 18px;
     font-family: "微软雅黑";
-    color: #9e9e9e;//字体颜色
+    color: #9e9e9e; //字体颜色
     overflow: auto; // 内容溢出如，则浏览器会显示滚动条以便查看其余的内容
   }
-  .content{
+
+  .content {
     width: 260px;
     height: 300px;
     margin: 0px auto;
     border: 1px solid #fff;
     position: relative;
-  }
 
-  .content {}
+    .c_conP {
+      width: 198px;
+      float: left;
+    }
+
+
+  }
 }
