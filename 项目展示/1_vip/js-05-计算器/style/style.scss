@@ -16,6 +16,7 @@ h1 {
 
   .show {
     // 250px * 40px  250px+10px=260px (300px-260x)/2=20px =>两边各余20px
+    // 设置div样式
     width: 250px;
     height: 40px;
     background-color: #fff;
@@ -23,6 +24,19 @@ h1 {
     padding-right: 10px; // 右内边距
     text-align: right; // CSS内容居右
     line-height: 40px; // 行高=height=>垂直方向上居中
+    background-color: #fff;
+    //设置内容样式
+    font-size: 18px;
+    font-family: "微软雅黑";
+    color: #9e9e9e;//字体颜色
+    overflow: auto; // 内容溢出如，则浏览器会显示滚动条以便查看其余的内容
+  }
+  .content{
+    width: 260px;
+    height: 300px;
+    margin: 0px auto;
+    border: 1px solid #fff;
+    position: relative;
   }
 
   .content {}
