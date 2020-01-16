@@ -4,14 +4,13 @@ var show = document.getElementsByClassName("show");
 
 // var btn = document.getElementById("btn"); // [object HTMLButtonElement] 单个按钮
 
-// alert(button); // [object HTMLCollection] 
+// alert(button); // [object HTMLCollection]
 // 点击获取的是数组 => 循环遍历=>使用let声明变量
 // 为了在IE浏览器中使用
 // => 1.使用babel编译src下的app.js；引用目标文件夹dest下的app.js
-//      脚本配置："build": "babel src -d dest"  
+//      脚本配置："build": "babel src -d dest"
 //      运行：npm run build
 // => 2.使用webpack打包编译src下的app.js，然后再引用
-
 
 // js点击事件的几种实现方式
 // 1.在标签中写事件
@@ -32,7 +31,6 @@ var show = document.getElementsByClassName("show");
 //     console.log(i);
 //   }
 // }
-
 
 function init() {
   for (var i = 0; i < button.length; i++) {
@@ -56,7 +54,7 @@ var result = 0; //总结果
 // 主函数
 function fun() {
   for (let i = 0; i < button.length; i++) {
-    button[i].onclick = function () {
+    button[i].onclick = function() {
       // console.log(this); // this => 标签
       if (this.indexs == 0) {
         show[0].innerHTML = 0;
@@ -64,9 +62,9 @@ function fun() {
         jian = false;
         cheng = false;
         chu = false;
-        str1 = '';
-        str2 = '';
-        count = '';
+        str1 = "";
+        str2 = "";
+        count = "";
         console.log(this.value);
       } else if (this.indexs >= 3 && this.indexs <= 13) {
         // 按钮值：7 8 9 4 5 6 1 2 3 .
@@ -80,33 +78,29 @@ function fun() {
           str2 = this.value;
           show[0].innerHTML = str1 + str2;
         }
-
-
-
       } else if (this.indexs <= 2 || this.indexs >= 14) {
         count++;
         // 按钮值：清零 ÷ × - + =
         var k = this.value;
         switch (k) {
-          case '÷':
+          case "÷":
             break;
-          case '×':
+          case "×":
             break;
-          case '+':
+          case "+":
             console.log(1);
-            str1 += '+';
+            str1 += "+";
             show[0].innerHTML = str1;
             jia = true;
             break;
-          case '=':
+          case "=":
             resullt = size();
             temp = resullt;
             show[0].innerHTML = resullt;
             break;
         }
       }
-
-    }
+    };
   }
 }
 // 调用
