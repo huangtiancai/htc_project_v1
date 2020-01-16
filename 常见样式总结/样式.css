@@ -9,8 +9,7 @@ default:
 html,
 body {
   height: 100%;
-  cursor: url(./assets/pic/pointer.cur), default; 
-
+  cursor: url(./assets/pic/pointer.cur), default;
 }
 /*2
 cursor
@@ -50,7 +49,7 @@ float: right;
 }
 
 /*6
-vertical-align 属性设置一个元素的垂直对齐方式 
+vertical-align 属性设置一个元素的垂直对齐方式
 vertical-align: middle; 把此元素放置在父元素的中部
 */
 
@@ -112,7 +111,6 @@ z-index 属性指定一个元素的堆叠顺序
   z-index: 1010 !important;
 }
 
-
 /*12
 left 属性规定元素的左边缘。该属性定义了定位元素左外边距边界与其包含块左边界之间的偏移
 left: unset;
@@ -161,7 +159,7 @@ APP.vue
 19 left: unset;
    right: 0;
    right: unset !important;
-20 margin-left 
+20 margin-left
    margin-*
 21 padding
    padding-*
@@ -169,7 +167,7 @@ APP.vue
 23 background  background: rgba(255, 111, 27, 0.9) !important;
    background-color
    background-image
-24 border-radius 圆角   border-radius: 2em; 
+24 border-radius 圆角   border-radius: 2em;
 25 height/width
 26 rgba
 27 text-align: center;
@@ -185,7 +183,7 @@ APP.vue
 36 max-width: 1080px
 37 ::selection
 38 @media 媒体查询 响应式布局
-39 display 
+39 display
 40 top
 41 line-height
 42 fadeIn
@@ -250,9 +248,14 @@ Category
 
 Home
 
-Link 
+Link
 
 Search
 
 
 */
+
+.hav {
+  position: relative;
+  float: left;
+}

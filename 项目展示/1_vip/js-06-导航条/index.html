@@ -7,28 +7,51 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>导航条</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .body {
+      font-family: '微软雅黑';
+      font-size: 14px;
+    }
+
+    #hav {
+      width: 200px;
+      height: 500px;
+      background-color: rgba(56, 56, 56, .8);
+      margin-left: 50px;
+      margin-top: 50px;
+      position: relative;
+      float: left;
+    }
+
+    #hav ul li {
+      width: 200px;
+      height: ;
+    }
+
+    ul {
+      list-style: none;
+    }
+
     a {
+      color: #fff;
       text-decoration: none;
     }
   </style>
 </head>
 
 <body>
-  <div id="nav">
+  <div id="hav">
     <ul>
-      <li class="li">软件学习
+      <li class="li">
+        <a href="#">软件学习<span>&gt;</span></a>
         <div class="index">
           <ul>
             <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">Java</a></li>
+
           </ul>
       </li>
       <li class="li">视觉设计
@@ -196,7 +219,6 @@
         this.getElementsByClassName('index')[0].style.display = 'none';
       }
     }
-
   </script>
 </body>
 

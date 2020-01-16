@@ -1,0 +1,36 @@
+# http://editorconfig.org
+# editorConfig 文件中的设置用于在基本代码库中维持一致的编码风格和设置例如缩进样式、选项卡宽度、行尾字符以及编码等，而无需考虑使用的编辑器或 IDE
+
+# editorConfig - 名称为.editorconfig的自定义文件
+# 1.该文件用来定义项目的编码规范，编辑器的行为会与.editorconfig 文件中定义的一致，
+#  并且其优先级比编辑器自身的设置要高=>适用于多人协同开发
+
+# 2.当打开一个文件时，EditorConfig插件会在打开文件的目录和其每一级父目录查找.editorconfig文件，
+#  直到有一个配置文件root=true
+
+# 3.EditorConfig的配置文件是从上往下读取的并且最近的EditorConfig配置文件会被最先读取.
+#   匹配EditorConfig配置文件中的配置项会按照读取顺序被应用, 所以最近的配置文件中的配置项拥有优先权
+
+# 4.vscode本身不支持editorconfig，必须安装EditorConfig扩展才会实现
+#   EditorConfig扩展的作用就是读取第一步创建的editorconfig文件中定义的规则
+#   并覆盖user/workspace settings中的对应配置
+#   如果.editorconfig文件没有进行某些配置，则使用编辑器默认的设置
+
+
+# 配置.editorconfig
+# 在当前项目根目录下添加.editorconfig文件
+
+#详细配置和介绍
+#表示是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
+root = true
+
+[*]
+indent_style = space                    # 输入的 tab 都用空格代替
+indent_size = 2                         # 一个 tab 用 2 个空格代替
+end_of_line = lf                        # 换行符使用 unix 的换行符 \n => 每一行的尾部自动调整为 Lf
+charset = utf-8                         # 字符编码 utf-8
+trim_trailing_whitespace = true         # 去掉每行末尾的空格
+insert_final_newline = true             # 每个文件末尾都加一个空行
+
+[*.md]
+trim_trailing_whitespace = false        # .md 文件不去掉每行末尾的空格
