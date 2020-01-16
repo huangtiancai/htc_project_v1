@@ -1,93 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Banner</title>
-    <style>
-      .html {
-        margin: 0;
-        padding: 0;
-      }
 
-      #banner {
-        margin: 50px auto;
-        width: 738px;
-        height: 430px;
-        background-color: #dddd;
-        position: relative;
-        overflow: hidden;
-      }
-      #banner #slid ul li {
-        display: none;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-      }
-      ul li {
-        list-style: none;
-      }
-      /*
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Banner</title>
+  <style>
+    .html {
+      margin: 0;
+      padding: 0;
+    }
+
+    #banner {
+      margin: 50px auto;
+      width: 738px;
+      height: 430px;
+      background-color: #dddd;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #banner #slid ul li {
+      display: none;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    /*
        140px * 140px 雪碧图/精灵图
         雪碧图是一种CSS图像合并技术，该方法是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分
        */
-      .ear .ee {
-        background: url("images/arrow.png");
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        /*图片的左上顶点位置占整个div50%*/
-        top: 50%;
-        /*上移*/
-        margin-top: -35px;
-        cursor: pointer;
-      }
-      .ear #prev {
-        background-position: 0 0;
-      }
-      .ear #next {
-        background-position: 0 70px;
-        right: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="banner">
-      <div id="slid">
-        <ul>
-          <li style="display: none;">
-            <a href="#">
-              <img src="images/st1.jpg" width: 738px; height: 430px;/>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st2.jpg" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st3.jpg" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st4.jpg" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st5.jpg" />
-            </a>
-          </li>
-        </ul>
-      </div>
+    .ear .ee {
+      background: url("images/arrow.png");
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      /*图片的左上顶点位置占整个div50%*/
+      top: 50%;
+      /*上移*/
+      margin-top: -35px;
+      cursor: pointer;
+    }
+  </style>
+</head>
 
-      <div class="ear">
-        <div class="ee" id="pre">pre</div>
-        <div class="ee" id="next">next</div>
-      </div>
+<body>
+  <div id="banner">
+    <div id="slid">
+      <ul>
+        <li style="display: none;">
+          <a href="#">
+            <img src="images/st1.jpg" width: 738px; height: 430px; />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st2.jpg" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st3.jpg" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st4.jpg" />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st5.jpg" />
+          </a>
+        </li>
+      </ul>
     </div>
-  </body>
+
+    <div class="ear">
+      <div class="ee" id="pre">pre</div>
+      <div class="ee" id="next">next</div>
+    </div>
+  </div>
+</body>
+
 </html>
