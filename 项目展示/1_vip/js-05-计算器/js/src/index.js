@@ -33,13 +33,14 @@ var show = document.getElementsByClassName("show");
 // }
 
 function init() {
-  for (var i = 0; i < button.length; i++) {
-    button[i].indexs = i; //将索引添加到数组上去
-    // console.log(button[i]); //标签本身
-    // console.log(button[i].indexs); //0-16
-  }
+    for (var i = 0; i < button.length; i++) {
+        button[i].indexs = i; //将索引添加到数组上去
+        // console.log(button[i]); //标签本身
+        // console.log(button[i].indexs); //0-16
+    }
 }
 init();
+var str = "";
 
 var count = 0;
 var temp = "";
@@ -53,63 +54,63 @@ var str2 = "";
 var result = 0; //总结果
 // 主函数
 function fun() {
-  for (let i = 0; i < button.length; i++) {
-    button[i].onclick = function() {
-      // console.log(this); // this => 标签
-      if (this.indexs == 0) {
-        show[0].innerHTML = 0;
-        jia = false;
-        jian = false;
-        cheng = false;
-        chu = false;
-        str1 = "";
-        str2 = "";
-        count = "";
-        console.log(this.value);
-      } else if (this.indexs >= 3 && this.indexs <= 13) {
-        // 按钮值：7 8 9 4 5 6 1 2 3 .
-        // console.log(this.value);
-        if (count == 0) {
-          str1 = this.value;
-          show[0].innerHTML = str1;
-        }
-        // 数值后接运算符后，再接数值
-        if (count > 0) {
-          str2 = this.value;
-          show[0].innerHTML = str1 + str2;
-        }
-      } else if (this.indexs <= 2 || this.indexs >= 14) {
-        count++;
-        // 按钮值：清零 ÷ × - + =
-        var k = this.value;
-        switch (k) {
-          case "÷":
-            break;
-          case "×":
-            break;
-          case "+":
-            console.log(1);
-            str1 += "+";
-            show[0].innerHTML = str1;
-            jia = true;
-            break;
-          case "=":
-            resullt = size();
-            temp = resullt;
-            show[0].innerHTML = resullt;
-            break;
-        }
-      }
-    };
-  }
+    for (let i = 0; i < button.length; i++) {
+        button[i].onclick = function() {
+            // console.log(this); // this => 标签
+            if (this.indexs == 0) {
+                show[0].innerHTML = 0;
+                jia = false;
+                jian = false;
+                cheng = false;
+                chu = false;
+                str1 = "";
+                str2 = "";
+                count = "";
+                console.log(this.value);
+            } else if (this.indexs >= 3 && this.indexs <= 13) {
+                // 按钮值：7 8 9 4 5 6 1 2 3 .
+                // console.log(this.value);
+                if (count == 0) {
+                    str1 = this.value;
+                    show[0].innerHTML = str1;
+                }
+                // 数值后接运算符后，再接数值
+                if (count > 0) {
+                    str2 = this.value;
+                    show[0].innerHTML = str1 + str2;
+                }
+            } else if (this.indexs <= 2 || this.indexs >= 14) {
+                count++;
+                // 按钮值：清零 ÷ × - + =
+                var k = this.value;
+                switch (k) {
+                    case "÷":
+                        break;
+                    case "×":
+                        break;
+                    case "+":
+                        console.log(1);
+                        str1 += "+";
+                        show[0].innerHTML = str1;
+                        jia = true;
+                        break;
+                    case "=":
+                        resullt = size();
+                        temp = resullt;
+                        show[0].innerHTML = resullt;
+                        break;
+                }
+            }
+        };
+    }
 }
 // 调用
 fun();
 
 function size() {
-  var result1;
-  if (jia) {
-    result1 = parseFloat(str1) + parseFloat(str2);
-  }
-  return result1;
+    var result1;
+    if (jia) {
+        result1 = parseFloat(str1) + parseFloat(str2);
+    }
+    return result1;
 }

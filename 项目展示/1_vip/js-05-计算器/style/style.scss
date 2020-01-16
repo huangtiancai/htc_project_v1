@@ -1,122 +1,110 @@
- * {
-   margin: 0;
-   padding: 0;
- }
+* {
+  margin: 0;
+  padding: 0;
+}
 
- h1 {
-   margin: 50px;
-   text-align: center;
- }
+h1 {
+  margin: 50px;
+  text-align: center;
+}
 
- .count {
-    background-color: #f2f2f2;
-    width: 300px;
-    height: 400px;
-    margin: 30px auto;
+.count {
+  background-color: #f2f2f2;
+  width: 300px;
+  height: 400px;
+  margin: 30px auto;
+  border: 1px solid #fff;
+  .show {
+    // 250px * 40px  250px+10px=260px (300px-260x)/2=20px =>两边各余20px
+    // 设置div样式
+    width: 250px;
+    height: 40px;
+    background-color: #fff;
+    margin: 18px auto; //左右均为auto，水平居中显示
+    padding-right: 10px; // 右内边距
+    text-align: right; // CSS内容居右
+    line-height: 40px; // 行高=height=>垂直方向上居中
+    background-color: #fff;
+    //设置内容样式
+    font-size: 18px;
+    font-family: "微软雅黑";
+    color: #9e9e9e; //字体颜色
+    overflow: auto; // 内容溢出如，则浏览器会显示滚动条以便查看其余的内容
+  }
+  .content {
+    width: 260px;
+    height: 300px;
+    margin: 0px auto;
     border: 1px solid #fff;
-
-   .show {
-      // 250px * 40px  250px+10px=260px (300px-260x)/2=20px =>两边各余20px
-      // 设置div样式
-      width: 250px;
-      height: 40px;
-      background-color: #fff;
-      margin: 18px auto; //左右均为auto，水平居中显示
-      padding-right: 10px; // 右内边距
-      text-align: right; // CSS内容居右
-      line-height: 40px; // 行高=height=>垂直方向上居中
-      background-color: #fff;
-      //设置内容样式
-      font-size: 18px;
+    position: relative;
+    input {
+      width: 48px;
+      height: 48px;
+      background-color: #9e9e9e;
+      /*每个按钮上外边距=10px,右外边距=13px*/
+      margin-right: 13px;
+      margin-top: 10px;
+      float: left;
+      font-size: 20px;
       font-family: "微软雅黑";
-      color: #9e9e9e; //字体颜色
-      overflow: auto; // 内容溢出如，则浏览器会显示滚动条以便查看其余的内容
-    }
-
-    .content {
-      width: 260px;
-      height: 300px;
-      margin: 0px auto;
-      border: 1px solid #fff;
-      position: relative;
-
-      input{
-        width: 48px;
-        height: 48px;
-        background-color: #9e9e9e;
-        /*每个按钮上外边距=10px,右外边距=13px*/
-        margin-right: 13px;
-        margin-top: 10px;
-        float: left;
-        font-size: 20px;
-        font-family: "微软雅黑";
-        /*清除按钮边框*/
-        border: 0;
-        outline: none;
-        cursor:pointer;
-        background:#eaeaea;
-
-        &:hover{
-          background: red;
-          color: #fff;
-          transition: .4s;
-        }
+      /*清除按钮边框*/
+      border: 0;
+      outline: none;
+      cursor: pointer;
+      background: #eaeaea;
+      &:hover {
+        background: red;
+        color: #fff;
+        transition: 0.4s;
       }
-
-      .yun{
+    }
+    .yun {
+      background-color: #738fd8;
+      color: #fff;
+    }
+    .c_con {
+      width: 198px;
+      float: left;
+      .left {
+        /*0、1、4、7、清零 左外边距：14px*/
+        margin-left: 15px;
+      }
+      /*设置清零按钮样式*/
+      .qing {
+        // 按钮背景色
         background-color: #738fd8;
+        /*字体大小*/
+        font-size: 16px;
+        /*字体颜色*/
         color: #fff;
       }
-      
-      .c_con {
-        width: 198px;
-        float: left;
-
-        .left {
-          /*0、1、4、7、清零 左外边距：14px*/
-          margin-left: 15px;
-        }
-
-        /*设置清零按钮样式*/
-        .qing{
-          // 按钮背景色
-          background-color: #738fd8;
-          /*字体大小*/
-          font-size: 16px;
-          /*字体颜色*/
-          color: #fff;
-        }
-        
-        .ling{
-          width: 109px;
-        }
+      .ling {
+        width: 109px;
       }
+    }
+    .inpuposi {
+      float: left;
+      .posi {
+        height: 106px;
+        position: absolute;
+      }
+      .jian {
+        height: 48px;
+      }
+      .jia {
+        top: 58px;
+      }
+      .den {
+        top: 174px;
+        background: #ff6600;
+        color: #fff;
+      }
+    }
+  }
+}
 
-     .inpuposi{
-        float: left;
-        .posi{
-          height: 106px;
-          position: absolute;
-        }
-        .jian{
-          height: 48px;
-        }
-        .jia{
-          top: 58px;
-        }
-        .den{
-          top:174px;
-          background: #ff6600;
-          color: #fff;
-        }
-     }
-
-   }
-
- }
-
- ::-webkit-scrollbar {
-			width: 5px;
-			height: 6px;
-			background: #ccc;
-		}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 6px;
+  background: #ccc;
+}
