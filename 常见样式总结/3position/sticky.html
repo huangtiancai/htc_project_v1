@@ -6,8 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>sticky</title>
     <style>
-      *{
-        
+      * {
+        /*实际大小就是width/height*/
+        box-sizing: border-box;
+        /* margin: 0; */
+        /* padding: 0; */
+      }
+      dl {
+        margin: 0;
+        padding: 20px 0 0 0;
+      }
+
+      dt {
+        background: #b8c1c8;
+        /*上边框*/
+        border-top: 1px solid #717d85;
+        /*下边框*/
+        border-bottom: 1px solid #989ea4;
+        /*字体*/
+        color: #fff;
+        font: bold 18px/21px Helvetica, Arial, sans-serif;
+
+        margin: 0px;
+        padding: 2px 0 0 12px;
+        /*???*/
+        position: -webkit-sticky;
+        position: sticky;
+        top: -1px;
+      }
+      dd {
+        font: bold 20px/45px Helvetica, Arial, sans-serif;
+        margin: 0px;
+        padding: 0 0 0 12px;
+        /*设置如何处理元素中的 空白 - 连续的空白符会被合并,但文本内的换行无效*/
+        white-space: nowrap;
+      }
+      /*dd任一下一个兄弟元素dd*/
+      dd + dd {
+        border-top: 1px solid #ccc;
       }
     </style>
   </head>
@@ -41,5 +77,14 @@
         <dd>Two Gallants</dd>
       </dl>
     </div>
+    <script>
+      if (
+        CSS.supports("position", "sticky") ||
+        CSS.supports("position", "-webkit-sticky")
+      ) {
+        // 支持 sticky
+        console.log("支持 sticky");
+      }
+    </script>
   </body>
 </html>
