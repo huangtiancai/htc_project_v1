@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>absolute</title>
+    <style>
+      .box {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        background: yellowgreen;
+        color: #fff;
+        /*内容水平垂直方向均居中*/
+        text-align: center;
+        line-height: 100px;
+      }
+      /*
+        绝对定位：
+        相对定位的元素并未脱离文档流，而绝对定位的元素则脱离了文档流
+        绝对定位元素不占据空间。绝对定位元素相对于最近的非 static 祖先元素定位
+        会影响其他元素的偏移
+      */
+      #two {
+        position: absolute;
+        background: blue;
+        left: 20px;
+        top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="one">One</div>
+    <div class="box" id="two">Two</div>
+    <div class="box" id="three">Three</div>
+    <div class="box" id="four">Four</div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>relative</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: yellowgreen;
+        display: inline-block;
+        color: #fff;
+        /*内容水平垂直方向均居中*/
+        text-align: center;
+        line-height: 100px;
+      }
+      /*
+        相对定位：
+        相对定位的元素是在文档中的正常位置偏移给定的值，但是不影响其他元素的偏移
+        未应用定位的其它元素是按照 "Two" 在正常位置的情况下进行布局的
+      */
+      #two {
+        position: relative;
+        background: blue;
+        top: 20px;
+        left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" id="one">One</div>
+    <div class="box" id="two">Two</div>
+    <div class="box" id="three">Three</div>
+    <div class="box" id="four">Four</div>
+  </body>
+</html>

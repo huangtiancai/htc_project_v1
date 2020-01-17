@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>box-sizing</title>
+    <style>
+      div {
+        width: 160px;
+        height: 80px;
+        background: yellowgreen;
+
+        /*内边距*/
+        padding: 20px;
+        /*边框*/
+        border: 8px solid red;
+      }
+      .content-box {
+        /*
+          内容区：
+                width: 160px
+                height: 80px
+          内边距:20px;
+          变宽：8px;
+          实际渲染大小：
+              160+20*2+8=208px
+              80+20*2+8=128px
+        */
+        box-sizing: content-box;
+      }
+      .border-box {
+        /*
+          内容区：
+              160px-20*2-8*2=104px
+              80px-20*2-8*2=24px
+          内边距:20px;
+          变宽：8px;
+          实际大小：
+                width: 160px
+                height: 80px
+        */
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- box-sizing用于更改预设CSS盒模型中所计算的宽度和高度 -->
+    <!-- 
+      语法：
+      /* Keyword values */
+      box-sizing: content-box;
+      box-sizing: border-box;
+
+      /* Global values */
+      box-sizing: inherit;
+      box-sizing: initial;
+      box-sizing: unset;     -->
+
+    <!-- 前提：实际在浏览器中的渲染的大小不等于盒子模型的大小-->
+    <!-- content-box（默认，标准盒子模型）
+      1.width与height只包括内容区的宽和高,不包括内边距（padding）、边框（border）、外边距（margin）
+      2.实际绘制/渲染到屏幕上的实际大小加上内边距（padding）、边框（border）
+        注意: 内边距、边框和外边距都在这个盒子的外部
+        尺寸计算公式：
+        width = 内容区的宽度
+        height = 内容区的高度
+        实际渲染宽度 = width + padding + border
+        实际渲染高度 = height + padding + border
+        比如说，.box {width: 350px; border: 10px solid black;} =>实际宽度=350+10px*2=370px;
+    -->
+    <div class="content-box">
+      Content box
+    </div>
+    <!-- border-box
+          1.width与height包括内容，内边距和边框，但不包括外边距
+          2.实际绘制/渲染到屏幕上的实际大小width/height
+            注意: 内边距、边框都在这个盒子的内部
+            尺寸计算公式：
+            width = 内容区的宽度 + border + padding 
+            height = 内容区的高度 + border + padding
+            内容区的宽度 = width - (border + padding)
+            内容区的高度 = height - (border + padding)
+            实际渲染宽度 = width
+            实际渲染高度 = height
+            比如说，.box {width: 350px; border: 10px solid black;} =>实际呈现的宽度=350px;
+        -->
+    <div class="border-box">
+      Border box
+    </div>
+
+    <!--
+      总结：
+        几个值需要注意
+        1.内容区宽度/高度
+        2.实际呈现(渲染在浏览器)宽度/高度
+        3.盒子的大小 
+        盒子大小是否与实际大小相等？从浏览器实际显示是这样的，但是 content-box 中“ 内边距、边框和外边距都在这个盒子的外部”
+        这句话有歧义
+        => 故只关注大小即可实际
+
+    -->
+  </body>
+</html>
