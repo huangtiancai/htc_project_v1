@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Banner</title>
     <style>
-      .html {
+      * {
         margin: 0;
         padding: 0;
       }
@@ -15,7 +15,7 @@
         margin: 50px auto;
         width: 738px;
         height: 430px;
-        background-color: #dddd;
+        background-color: #ddd;
         position: relative;
         overflow: hidden;
       }
@@ -38,21 +38,58 @@
        */
       .ear .ee {
         background: url("images/arrow.png");
+        /*使用雪碧图之前可以先全尺寸显示，最后再调整为实际大小
+          注意尺寸调整为影响位置
+        */
         width: 70px;
         height: 70px;
         position: absolute;
         /*图片的左上顶点位置占整个div50%*/
         top: 50%;
-        /*上移*/
+        /*上移35px距离*/
         margin-top: -35px;
         cursor: pointer;
       }
-      .ear #pre {
+      .ear #prev {
+        /*基于上方设置的位置不变*/
         background-position: 0 0;
       }
       .ear #next {
-        background-position: 0 70px;
+        /*先移动到右侧*/
         right: 0;
+        background-position: 0 -70px;
+      }
+      .ear #prev:hover {
+        background-position: -70px 0;
+      }
+      .ear #next:hover {
+        right: 0;
+        background-position: -70px -70px;
+      }
+      #banner #tab {
+        /*1*/
+        position: absolue;
+        /*2*/
+        background: rgba(255, 255, 255, 0.5);
+        /*8tab位置*/
+        left: 50%;
+        bottom: 12px;
+
+        /* border-radius: 10px; */
+      }
+      #banner #tab a {
+        /*3.正方形大小*/
+        width: 12px;
+        height: 12px;
+        /*4背景色*/
+        background: #fff;
+        /*5.圆角*/
+        border-radius: 50%;
+        /*6.*/
+        display: block;
+        float: left;
+        /*7五个标签间的外边距*/
+        margin: 5px;
       }
     </style>
   </head>
@@ -61,38 +98,93 @@
     <div id="banner">
       <div id="slid">
         <ul>
-          <li style="display: none;">
+          <li style="display: block;">
             <a href="#">
-              <img src="images/st1.jpg" width: 738px; height: 430px; />
+              <img src="images/st1.jpg" width: 738px height: 430px/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/st2.jpg" />
+              <img src="images/st2.jpg" width: 738px height: 430px />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/st3.jpg" />
+              <img src="images/st3.jpg" width: 738px height: 430px />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/st4.jpg" />
+              <img src="images/st4.jpg" width: 738px height: 430px/>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="images/st5.jpg" />
+              <img src="images/st5.jpg" width: 738px height: 430px/>
             </a>
           </li>
         </ul>
       </div>
 
       <div class="ear">
-        <div class="ee" id="pre">pre</div>
-        <div class="ee" id="next">next</div>
+        <div class="ee" id="prev"></div>
+        <div class="ee" id="next"></div>
+      </div>
+      <div id="tab">
+        <a href="javascript:void(0);" style="background-color: red;"></a>
+        <a href="javascript:void(0);"></a>
+        <a href="javascript:void(0);"></a>
+        <a href="javascript:void(0);"></a>
+        <a href="javascript:void(0);"></a>
       </div>
     </div>
+
+    <script>
+      var pre = document.getElementById("prev");
+      var nex = document.getElementById("next");
+
+      var slid = document.getElementById("slid");
+      var tab = document.getElementById("tab");
+
+      var lis = slid.getElementsByTagName("li");
+      var tabs = tab.getElementsByTagName("a");
+
+      // 记录当前图片的index
+      var last = 0;
+
+      for (var i = 0; i < tabs.length; i++) {
+        // tabs[i].onclick = function() {
+        //   console.log(i);
+        // };
+      }
+
+      function next() {
+        console.log(last);
+        if (last < 4) {
+          // last 初始值为0
+          last += 1;
+          // 上一张图片隐藏，下一章图片显示
+          lis[last - 1].style.display = "none";
+          lis[last].style.diaplay = "block";
+        } else if (last == 4) {
+          last = 0;
+          lis[4].style.diaplay = "none";
+        }
+        lis[last].style.diaplay = "block";
+      }
+
+      // 图片自动播放
+      function autoplay() {
+        setInterval(function() {
+          next();
+        }, 1000);
+      }
+      // 调用
+      autoplay();
+
+      // 点击左耳朵
+
+      // 点击有耳朵
+    </script>
   </body>
 </html>
