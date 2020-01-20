@@ -1,190 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Banner</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
 
-      #banner {
-        margin: 50px auto;
-        width: 738px;
-        height: 430px;
-        background-color: #ddd;
-        position: relative;
-        overflow: hidden;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Banner</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      #banner #slid ul li {
-        display: none;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-      }
+    #banner {
+      margin: 50px auto;
+      width: 738px;
+      height: 430px;
+      background-color: #ddd;
+      position: relative;
+      overflow: hidden;
+    }
 
-      ul li {
-        list-style: none;
-      }
+    #banner #slid ul li {
+      display: none;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
 
-      /*
+    ul li {
+      list-style: none;
+    }
+
+    /*
       background
        140px * 140px 雪碧图/精灵图
         雪碧图是一种CSS图像合并技术，该方法是将小图标和背景图像合并到一张图片上，然后利用css的背景定位来显示需要显示的图片部分
        */
-      .ear .ee {
-        background: url("images/arrow.png");
-        /*使用雪碧图之前可以先全尺寸显示，最后再调整为实际大小
+    .ear .ee {
+      background: url("images/arrow.png");
+      /*使用雪碧图之前可以先全尺寸显示，最后再调整为实际大小
           注意尺寸调整为影响位置
         */
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        /*图片的左上顶点位置占整个div50%*/
-        top: 50%;
-        /*上移35px距离*/
-        margin-top: -35px;
-        cursor: pointer;
-      }
-      .ear #prev {
-        /*基于上方设置的位置不变*/
-        background-position: 0 0;
-      }
-      .ear #next {
-        /*先移动到右侧*/
-        right: 0;
-        background-position: 0 -70px;
-      }
-      .ear #prev:hover {
-        background-position: -70px 0;
-      }
-      .ear #next:hover {
-        right: 0;
-        background-position: -70px -70px;
-      }
-      #banner #tab {
-        /*1*/
-        position: absolue;
-        /*2*/
-        background: rgba(255, 255, 255, 0.5);
-        /*8tab位置*/
-        left: 50%;
-        bottom: 12px;
+      width: 70px;
+      height: 70px;
+      position: absolute;
+      /*图片的左上顶点位置占整个div50%*/
+      top: 50%;
+      /*上移35px距离*/
+      margin-top: -35px;
+      cursor: pointer;
+    }
 
-        /* border-radius: 10px; */
-      }
-      #banner #tab a {
-        /*3.正方形大小*/
-        width: 12px;
-        height: 12px;
-        /*4背景色*/
-        background: #fff;
-        /*5.圆角*/
-        border-radius: 50%;
-        /*6.*/
-        display: block;
-        float: left;
-        /*7五个标签间的外边距*/
-        margin: 5px;
-      }
-    </style>
-  </head>
+    .ear #prev {
+      /*基于上方设置的位置不变*/
+      background-position: 0 0;
+    }
 
-  <body>
-    <div id="banner">
-      <div id="slid">
-        <ul>
-          <li style="display: block;">
-            <a href="#">
-              <img src="images/st1.jpg" width: 738px height: 430px/>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st2.jpg" width: 738px height: 430px />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st3.jpg" width: 738px height: 430px />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st4.jpg" width: 738px height: 430px/>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="images/st5.jpg" width: 738px height: 430px/>
-            </a>
-          </li>
-        </ul>
-      </div>
+    .ear #next {
+      /*先移动到右侧*/
+      right: 0;
+      background-position: 0 -70px;
+    }
 
-      <div class="ear">
-        <div class="ee" id="prev"></div>
-        <div class="ee" id="next"></div>
-      </div>
-      <div id="tab">
-        <a href="javascript:void(0);" style="background-color: red;"></a>
-        <a href="javascript:void(0);"></a>
-        <a href="javascript:void(0);"></a>
-        <a href="javascript:void(0);"></a>
-        <a href="javascript:void(0);"></a>
-      </div>
+    .ear #prev:hover {
+      background-position: -70px 0;
+    }
+
+    .ear #next:hover {
+      right: 0;
+      background-position: -70px -70px;
+    }
+
+    #banner #tab {
+      /*1*/
+      position: absolue;
+      /*2*/
+      background: rgba(255, 255, 255, 0.5);
+      /*8tab位置*/
+      left: 50%;
+      bottom: 12px;
+
+      /* border-radius: 10px; */
+    }
+
+    #banner #tab a {
+      /*3.正方形大小*/
+      width: 12px;
+      height: 12px;
+      /*4背景色*/
+      background: #fff;
+      /*5.圆角*/
+      border-radius: 50%;
+      /*6.*/
+      display: block;
+      float: left;
+      /*7五个标签间的外边距*/
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="banner">
+    <div id="slid">
+      <ul>
+        <li style="display: block;">
+          <a href="#">
+            <img src="images/st1.jpg" width: 738px height: 430px />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st2.jpg" width: 738px height: 430px />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st3.jpg" width: 738px height: 430px />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st4.jpg" width: 738px height: 430px />
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/st5.jpg" width: 738px height: 430px />
+          </a>
+        </li>
+      </ul>
     </div>
 
-    <script>
-      var pre = document.getElementById("prev");
-      var nex = document.getElementById("next");
+    <div class="ear">
+      <div class="ee" id="prev"></div>
+      <div class="ee" id="next"></div>
+    </div>
+    <div id="tab">
+      <a href="javascript:void(0);" style="background-color: red;"></a>
+      <a href="javascript:void(0);"></a>
+      <a href="javascript:void(0);"></a>
+      <a href="javascript:void(0);"></a>
+      <a href="javascript:void(0);"></a>
+    </div>
+  </div>
 
-      var slid = document.getElementById("slid");
-      var tab = document.getElementById("tab");
+  <script>
+    var pre = document.getElementById("prev");
+    var nex = document.getElementById("next");
 
-      var lis = slid.getElementsByTagName("li");
-      var tabs = tab.getElementsByTagName("a");
+    var slid = document.getElementById("slid");
+    var tab = document.getElementById("tab");
 
-      // 记录当前图片的index
-      var last = 0;
+    var lis = slid.getElementsByTagName("li");
+    var tabs = tab.getElementsByTagName("a");
 
-      for (var i = 0; i < tabs.length; i++) {
-        // tabs[i].onclick = function() {
-        //   console.log(i);
-        // };
-      }
+    // 记录当前图片的index
+    var last = 0;
 
-      function next() {
-        console.log(last);
-        if (last < 4) {
-          // last 初始值为0
-          last += 1;
-          // 上一张图片隐藏，下一章图片显示
-          lis[last - 1].style.display = "none";
-          lis[last].style.diaplay = "block";
-        } else if (last == 4) {
-          last = 0;
-          lis[4].style.diaplay = "none";
-        }
+    for (var i = 0; i < tabs.length; i++) {
+      // tabs[i].onclick = function() {
+      //   console.log(i);
+      // };
+    }
+
+    function next() {
+      console.log(last);
+      if (last < 4) {
+        // last 初始值为0
+        last += 1;
+        // 上一张图片隐藏，下一章图片显示
+        lis[last - 1].style.display = "none";
         lis[last].style.diaplay = "block";
+      } else if (last == 4) {
+        last = 0;
+        lis[4].style.diaplay = "none";
       }
+      lis[last].style.diaplay = "block";
+    }
 
-      // 图片自动播放
-      function autoplay() {
-        setInterval(function() {
-          next();
-        }, 1000);
-      }
-      // 调用
-      autoplay();
+    // 图片自动播放
+    function autoplay() {
+      setInterval(function () {
+        next();
+      }, 1000);
+    }
+    // 调用
+    autoplay();
 
-      // 点击左耳朵
+    // 点击左耳朵
 
-      // 点击有耳朵
-    </script>
-  </body>
+    // 点击有耳朵
+  </script>
+</body>
+
 </html>
