@@ -117,3 +117,17 @@ p {
     font-size: 14px;
     line-height: 24px;
 }
+
+/*
+dl dt dd
+*/
+dl {
+     width: 500px;
+ }
+
+dt{
+    float: left;
+    width: 200px;
+    color: #999;
+}
+
