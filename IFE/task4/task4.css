@@ -1,0 +1,22 @@
+.container{
+  background-color: #ccc;
+  width: 400px;
+  height: 200px;
+
+  position: absolute;
+	left: 50%;
+  top: 50%;	
+
+   /*50%是以div的左边界和上边界为准*/
+  margin-left: -200px;
+  margin-top: -100px;
+  
+}
+
+.top-left{
+  
+}
+
+.bottom-right{
+
+}
