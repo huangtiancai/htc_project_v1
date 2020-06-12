@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: "微软雅黑";
+    }
+
+    #box {
+      width: 1300px;
+      height: 440px;
+      /* background: yellowgreen; */
+
+      margin: 50px auto;
+      border: 1px solid #000;
+      position: relative;
+    }
+
+    #b_img {
+      margin: 20px 20px;
+      position: relative;
+      width: 400px;
+      height: 400px;
+      float: left;
+    }
+
+    #ga_img {
+      /*设置默认不可见*/
+      /* display: none; */
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 20px;
+      left: 460px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <div id="b_img">
+      <img src="images/logo.png" width="400" height="400" alt="">
+    </div>
+    <div id="ga_img">
+      <img src="images/logo.png" id="bigimg" width="800" height="800" alt="">
+    </div>
+  </div>
+</body>
+
+</html>

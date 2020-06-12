@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: '微软雅黑';
+}
+
+.div {
+  width: 1000px;
+  height: 400px;
+  background: rgb(241, 246, 226);
+  margin: 0 auto;
+
+  font-size: 34px;
+  border-bottom: 1px solid #000;
+}
+
+.Stair{
+  background: rgb(210, 224, 168);
+}
+
+/*右侧楼梯导航样式*/
+.stairNav{
+  width: 100px;
+  position: fixed;
+  bottom:30px;
+  right:20px
+}
+
+/*所有的list元素*/
+.stairNav .nav li{
+  height: 12px;
+  /*???*/
+  border-left: 1px solid #a3a3a3;
+  margin-bottom: -2px;
+}
+/*??*/
+.stairNav .nav .li{
+  border-left: 0;
+  margin-left: -7px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.stairNav .nav .list:hover span {
+  top: 4px;
+  left: 0;
+  width: 15px;
+  height:15px;
+  background-position: -104px 0;
+}
+
+.stairNav .nav .list span.active {
+
+}
+
+
+.stairNav .nav .list h3{
+  font-size: 14px;
+  color: #e9676a;
+  border-radius: 10px;
+  display: inline-block;
+  /*设置了inline-block，才能够改变元素的width、height的值，
+  设置padding,margin属性值，
+  top,left,bottom,right才能产生边距效果*/
+  padding: 2px 8px;
+  margin-left: 20px;
+}
+
+/*鼠标悬浮标题样式*/
+.stairNav .nav .list:hover h3 {
+  color: #fff;
+  background:#cc0033;
+}
+
+
+
+
+
+
+
+
+
+
