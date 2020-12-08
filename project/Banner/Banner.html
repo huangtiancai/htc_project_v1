@@ -13,10 +13,13 @@
     }
 
     #banner {
+      /*上下间距 居中对齐*/
       margin: 50px auto;
+      /* banner容器设置图片大小 */
       width: 738px;
       height: 430px;
       background-color: #ddd;
+      /**/
       position: relative;
       overflow: hidden;
     }
@@ -39,159 +42,211 @@
        */
     .ear .ee {
       background: url("images/arrow.png");
-      /*使用雪碧图之前可以先全尺寸显示，最后再调整为实际大小
-          注意尺寸调整为影响位置
-        */
+      /* background: red; */
+      /*使用雪碧图之前可以先全尺寸显示，最后再调整为实际大小，注意尺寸调整为影响位置*/
+      /*设置两个耳朵容器打下为雪碧图一半，根据实际设定*/
       width: 70px;
       height: 70px;
+
+      /*设置两个耳朵位置*/
       position: absolute;
       /*图片的左上顶点位置占整个div50%*/
       top: 50%;
-      /*上移35px距离*/
+      /*上移 width/2 距离 => 35px距离*/
       margin-top: -35px;
       cursor: pointer;
     }
 
     .ear #prev {
       /*基于上方设置的位置不变*/
+      /*background-position: x y*/
       background-position: 0 0;
     }
 
     .ear #next {
-      /*先移动到右侧*/
+      /*整张雪碧图右侧靠边，将左边一半靠边，背景位置向右移动一半 => */
       right: 0;
+      /*左下角箭头向上平移 - */
       background-position: 0 -70px;
     }
 
+    /* 鼠标悬浮样式 */
     .ear #prev:hover {
+      /*右上角箭头向左平移 - */
       background-position: -70px 0;
     }
 
     .ear #next:hover {
-      right: 0;
+      /* right: 0; */
       background-position: -70px -70px;
     }
 
-    #banner #tab {
-      /*1*/
-      position: absolue;
-      /*2*/
-      background: rgba(255, 255, 255, 0.5);
-      /*8tab位置*/
+    #tab {
+      position: absolute;
       left: 50%;
       bottom: 12px;
-
-      /* border-radius: 10px; */
+      margin-left: -55px;
+      background: rgba(255, 255, 255, .5);
+      border-radius: 10px;
     }
 
-    #banner #tab a {
-      /*3.正方形大小*/
+    #tab a {
+      /*正方形大小*/
       width: 12px;
       height: 12px;
-      /*4背景色*/
-      background: #fff;
-      /*5.圆角*/
+      /*.圆角*/
       border-radius: 50%;
-      /*6.*/
+      /*背景色*/
+      background: #fff;
       display: block;
       float: left;
-      /*7五个标签间的外边距*/
+      /*五个标签间的外边距*/
       margin: 5px;
     }
   </style>
 </head>
 
 <body>
+  <!-- <div><p>轮播图</p></div> -->
   <div id="banner">
     <div id="slid">
       <ul>
         <li style="display: block;">
-          <a href="#">
-            <img src="images/st1.jpg" width: 738px height: 430px />
-          </a>
+          <a href="#"><img src="images/1.png" width: 738px height: 430px /></a>
         </li>
         <li>
-          <a href="#">
-            <img src="images/st2.jpg" width: 738px height: 430px />
-          </a>
+          <a href="#"><img src="images/2.png" width: 738px height: 430px /></a>
         </li>
         <li>
-          <a href="#">
-            <img src="images/st3.jpg" width: 738px height: 430px />
-          </a>
+          <a href="#"><img src="images/3.png" width: 738px height: 430px /></a>
         </li>
         <li>
-          <a href="#">
-            <img src="images/st4.jpg" width: 738px height: 430px />
-          </a>
+          <a href="#"><img src="images/4.png" width: 738px height: 430px /></a>
         </li>
         <li>
-          <a href="#">
-            <img src="images/st5.jpg" width: 738px height: 430px />
-          </a>
+          <a href="#"><img src="images/5.png" width: 738px height: 430px /></a>
         </li>
       </ul>
     </div>
-
+    <!-- 左右切换耳朵 -->
     <div class="ear">
       <div class="ee" id="prev"></div>
       <div class="ee" id="next"></div>
     </div>
+    <!-- 轮播指示点 -->
     <div id="tab">
-      <a href="javascript:void(0);" style="background-color: red;"></a>
+      <a href="javascript:void(0);" style="background:red;"></a>
       <a href="javascript:void(0);"></a>
       <a href="javascript:void(0);"></a>
       <a href="javascript:void(0);"></a>
       <a href="javascript:void(0);"></a>
     </div>
   </div>
+  <!-- <div><img src="images/arrow.png" alt=""></div> -->
 
   <script>
-    var pre = document.getElementById("prev");
-    var nex = document.getElementById("next");
+    var banner = document.getElementById("banner")
+    var slid = document.getElementById("slid")
+    var tab = document.getElementById("tab")
+    var big = slid.getElementsByTagName("li")
+    var tabA = tab.getElementsByTagName("a")
 
-    var slid = document.getElementById("slid");
-    var tab = document.getElementById("tab");
+    var pre = document.getElementById("prev")
+    var nex = document.getElementById("next")
 
-    var lis = slid.getElementsByTagName("li");
-    var tabs = tab.getElementsByTagName("a");
+    // 定时器
+    var timer = null
+    // 记录当前图片的index,默认为 0
+    var curindex = 0;
 
-    // 记录当前图片的index
-    var last = 0;
+    // console.log(tabA)         // HTMLCollection
+    // console.log(tabA.length)  // HTMLCollection { 0: a, 1: a, 2: a, 3: a, 4: a, length: 5 }
 
-    for (var i = 0; i < tabs.length; i++) {
-      // tabs[i].onclick = function() {
-      //   console.log(i);
-      // };
-    }
+    // 指示点
+    for (var i = 0; i < tabA.length; i++) {
+      tabA[i].index = i  // 添加 index 属性 -> tabA[i]
 
-    function next() {
-      console.log(last);
-      if (last < 4) {
-        // last 初始值为0
-        last += 1;
-        // 上一张图片隐藏，下一章图片显示
-        lis[last - 1].style.display = "none";
-        lis[last].style.diaplay = "block";
-      } else if (last == 4) {
-        last = 0;
-        lis[4].style.diaplay = "none";
+      // 监听轮播指示点
+      tabA[i].onmouseover = function () {
+        // console.log(curindex)
+        // console.log(this.index) // tabA[i].index = this.index
+        // this.index 遍历的当前指示点
+        // banner 实际轮播的index
+        if (this.index != curindex) {
+          // 设置鼠标移入的指示点和其关联banner样式
+          tabA[this.index].style.background = 'red'
+          tabA[curindex].style.background = '#fff'
+
+          big[this.index].style.display = 'block'
+          big[curindex].style.display = 'none'
+          // 同时设置 curindex 为 鼠标指定的 index
+          curindex = this.index
+        }
       }
-      lis[last].style.diaplay = "block";
     }
 
-    // 图片自动播放
-    function autoplay() {
-      setInterval(function () {
-        next();
-      }, 1000);
+    function prev() {
+      if (curindex > 0) {
+        curindex -= 1
+        // 设置下一个 li 隐藏切换
+        big[curindex + 1].style.display = 'none'
+        tabA[curindex + 1].style.background = '#fff'
+      } else if (curindex == 0) {
+        // 轮播到第一一张图片时 curindex 恢复为最初默认0
+        curindex = 4
+        big[0].style.display = 'none'
+        tabA[0].style.background = '#fff'
+      }
+      // 设置当前 li 显示
+      big[curindex].style.display = 'block'
+      tabA[curindex].style.background = 'red'
     }
-    // 调用
-    autoplay();
+    // 默认 autoplay 调用 next
+    function next() {
+      // console.log(curindex)
+      if (curindex < 4) {
+        curindex += 1
+        // 设置上一个 li 隐藏切换
+        big[curindex - 1].style.display = 'none'
+        tabA[curindex - 1].style.background = '#fff'
+      } else if (curindex == 4) {
+        // 轮播到最后一张图片时 curindex 恢复为最初默认0
+        curindex = 0
+        big[4].style.display = 'none'
+        tabA[4].style.background = '#fff'
+      }
+      // 设置当前 li 显示
+      big[curindex].style.display = 'block'
+      tabA[curindex].style.background = 'red'
+      // console.log(curindex)
+    }
+
+    function autoplay() {
+      timer = setInterval(function () {
+        next()
+      }, 1000)
+    }
+    // 默认执行
+    autoplay()
 
     // 点击左耳朵
+    pre.onclick = function () {
+      prev()
+    }
+    // 点击右耳朵
+    nex.onclick = function () {
+      next()
+    }
 
-    // 点击有耳朵
+    // 鼠标移入清除定时器
+    banner.onmouseover = function () {
+      clearInterval(timer)
+    }
+    // 鼠标移出播放轮播图
+    banner.onmouseout = function () {
+      autoplay()
+    }
+
   </script>
 </body>
 
