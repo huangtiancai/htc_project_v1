@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas tutorial</title>
+</head>
+
+<body>
+  <canvas id="tutorial" width="150" height="150">
+    <img src="images/canvas.jpg" width="150" height="150" alt="" />
+  </canvas>
+
+
+  <script>
+    const canvas = document.getElementById('tutorial');
+    if(canvas.getContext){
+      const ctx = canvas.getContext('2d');
+    }
+    
+
+  </script>
+</body>
+
+</html>

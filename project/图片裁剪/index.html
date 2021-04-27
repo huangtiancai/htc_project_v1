@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>图片裁剪</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <link href="https://cdn.bootcdn.net/ajax/libs/cropper/4.1.0/cropper.min.css" rel="stylesheet">
+  <link href="style/cropper.css" rel="stylesheet">
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/cropper/4.1.0/cropper.min.js"></script>
+</head>
+
+<body style="background: #eee">
+
+  <!-- 更换图片/编辑图片按钮 -->
+  <div class="changeImg">
+    <button id="replaceImg" class="l-btn">更换图片</button>
+    <div>
+      <img id="finalImg" src="" width="100%">
+    </div>
+  </div>
+
+  <!--图片裁剪框 start-->
+  <!-- 通过jquery的toggle实现裁剪框的弹出和关闭 -->
+  <div style="display: none" class="tailoring-container">
+    <!-- 点击非弹出其它位置关闭裁剪框 -->
+    <div class="black-cloth" onclick="closeTailor(this)"></div>
+
+    <!-- 裁剪框 -->
+    <div class="tailoring-content">
+      <!-- 裁剪框顶部：选择图片 + × -->
+      <div class="tailoring-content-one">
+        <!-- 选择图片按钮 -->
+        <label title="上传图片" for="chooseImg" class="l-btn choose-btn">
+          <input type="file" accept="image/jpg,image/jpeg,image/png" name="file" id="chooseImg" class="hidden"
+            onchange="selectImg(this)">选择图片
+        </label>
+        <!-- × 按钮 -->
+        <div class="close-tailoring" onclick="closeTailor(this)">×</div>
+      </div>
+
+      <div class="tailoring-content-two">
+        <div class="tailoring-box-parcel">
+          <img id="tailoringImg">
+        </div>
+        <div class="preview-box-parcel">
+          <p>图片预览：</p>
+          <div class="square previewImg"></div>
+        </div>
+      </div>
+
+      <div class="tailoring-content-three">
+        <button class="l-btn cropper-reset-btn">复位</button>
+        <button class="l-btn cropper-rotate-btn">旋转(顺时针45度)</button>
+        <button class="l-btn cropper-scaleX-btn">换向</button>
+        <button class="l-btn sureCut" id="sureCut">确定</button>
+      </div>
+    </div>
+  </div>
+  <!--图片裁剪框 end-->
+
+</body>
+
+<script src="js/cropper.js"></script>
+
+</html>
