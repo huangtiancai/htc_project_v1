@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用canvas来绘制图形</title>
+  <script type="text/javascript">
+    function draw() {
+      const canvas = document.getElementById('tutorial');
+      if (canvas.getContext) {
+        // The rendering context
+        const ctx = canvas.getContext('2d');
+
+        // 绘制矩形
+        // 绘制一个填充的矩形 fillRect(x, y, width, height)
+        ctx.fillRect(25, 25, 100, 100);
+
+        // 清除指定矩形区域，让清除部分完全透明 clearRect(x, y, width, height)
+        ctx.clearRect(45, 45, 60, 60)
+
+        // 绘制一个矩形的`边框` strokeRect(x, y, width, height)
+        ctx.strokeRect(50, 50, 50, 50)
+      }
+    }
+  </script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* canvas元素 - 栅格 给栅格画个边界区分 */
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body onload="draw();">
+  <canvas id="tutorial" width="150" height="150">
+    <img src="images/canvas.jpg" width="150" height="150" alt="" />
+  </canvas>
+</body>
+
+</html>

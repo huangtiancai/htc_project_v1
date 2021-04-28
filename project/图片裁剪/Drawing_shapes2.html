@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用canvas来绘制图形</title>
+  <script type="text/javascript">
+    function draw() {
+      const canvas = document.getElementById('tutorial');
+      if (canvas.getContext) {
+        // The rendering context
+        const ctx = canvas.getContext('2d');
+
+        // 绘制路径
+        // 1.首先，你需要创建路径起始点
+        // 2.然后你使用画图命令去画出路径
+        // 3.之后你把路径封闭
+        // 4.一旦路径生成，你就能通过描边或填充路径区域来渲染图形
+        
+        // 绘制一个三角形(逆时针方向)
+        ctx.beginPath();      // 设置路径
+        // 设置起点
+        ctx.moveTo(75,50);
+        ctx.lineTo(100,75);
+        ctx.lineTo(100,25);
+        ctx.fill(); 
+
+      }
+    }
+  </script>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* canvas元素 - 栅格 给栅格画个边界区分 */
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body onload="draw();">
+  <canvas id="tutorial" width="150" height="150">
+    <img src="images/canvas.jpg" width="150" height="150" alt="" />
+  </canvas>
+</body>
+
+</html>

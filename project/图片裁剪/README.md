@@ -6,8 +6,12 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL
 https://juejin.cn/post/6844904120374001678
 
 ### Canvas
+  Canvas教程
+  https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial
 - 基本用法
+  https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Basic_usage  => 设置了 `canvas` 环境
 - 绘制图形
+  https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes
 - 使用样式与颜色
 - 绘制文本
 - 使用图像
