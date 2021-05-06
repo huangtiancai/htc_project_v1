@@ -9,6 +9,7 @@
   <script type="text/javascript">
     function draw() {
       const canvas = document.getElementById('tutorial');
+      // 检查编程支持性-测试getContext方法的存在性
       if (canvas.getContext) {
         // The rendering context
         const ctx = canvas.getContext('2d');
