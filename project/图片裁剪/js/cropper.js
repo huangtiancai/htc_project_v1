@@ -77,6 +77,7 @@ function selectImg(file) {
 // cropper图片裁剪
 $('#tailoringImg').cropper({
   aspectRatio: 1650 / 798, // 默认比例,设置图片剪裁比例，决定实际输出图片比例
+  aspectRatio: 980 / 630,
   preview: '.previewImg',  // 将待裁剪的图片绑定到预览视图dom
   guides: true,            // 裁剪框的虚线(九宫格)
   autoCropArea: 1,         // 0-1之间的数值，定义自动剪裁区域的大小，默认0.8

@@ -5,6 +5,15 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawIm
 https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL
 https://juejin.cn/post/6844904120374001678
 
+https://zhuanlan.zhihu.com/p/143873360
+https://juejin.cn/post/6844904105584885773
+https://juejin.cn/post/6844903568726556686
+https://juejin.cn/post/6844903713929166855
+https://juejin.cn/post/6844903918598619143
+https://segmentfault.com/q/1010000015157655
+https://blog.csdn.net/weixin_45264424/article/details/108367730
+
+
 ### Canvas
   Canvas教程
   https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial
