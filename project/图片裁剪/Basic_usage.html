@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canvas的基本用法</title>
+  <script type="text/javascript">
+    function draw() {
+      const canvas = document.getElementById('tutorial');
+      // 检查编程支持性-测试getContext方法的存在性
+      if (canvas.getContext) {
+        // The rendering context
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = "rgba(200,0,0)";
+        ctx.fillRect(10, 10, 55, 50);
+
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillRect(30, 30, 70, 100);
+      }
+    }
+  </script>
+  <style type="text/css">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body onload="draw();">
+  <canvas id="tutorial" width="150" height="150">
+    <!-- 替换内容：
+        在<canvas>标签中提供了替换内容，不支持<canvas>的浏览器将会忽略容器并在其中渲染后备内容
+        而支持<canvas>的浏览器将会忽略在容器中包含的内容，并且只是正常渲染canvas
+    -->
+    <img src="images/canvas.jpg" width="150" height="150" alt="" />
+  </canvas>
+</body>
+
+</html>
